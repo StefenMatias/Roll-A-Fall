@@ -20,6 +20,14 @@ class BlockGameObject: Gameobject {
         switch type {
         case "Base":
             self.blockName = "block01"
+        case "Space":
+            self.blockName = "NULL"
+        case "Raised":
+            self.blockName = "block01"
+        case "Double Singles":
+            self.blockName = "SingleBlock"
+        case "Base Breakable":
+            self.blockName = "SingleBlock_Breaking"
         default:
             self.blockName = "block01"
         }

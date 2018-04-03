@@ -35,10 +35,6 @@ class ParallaxingBackground{
         */
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
     func parralaxing() {
         
         Background1.position.x -= speed

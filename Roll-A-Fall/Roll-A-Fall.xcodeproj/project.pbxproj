@@ -10,6 +10,8 @@
 		B81DC32A204F8B1700EE11F7 /* BlockGameObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B81DC329204F8B1700EE11F7 /* BlockGameObject.swift */; };
 		B8744220205187F80012F246 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = B874421F205187F80012F246 /* Player.swift */; };
 		B87442242051E62C0012F246 /* InGameButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87442232051E62C0012F246 /* InGameButton.swift */; };
+		B8B6D5D42071848200EC4B8C /* LevelSpawner.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B6D5D32071848200EC4B8C /* LevelSpawner.swift */; };
+		B8B6D5D62073E30000EC4B8C /* ScoreSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B6D5D52073E30000EC4B8C /* ScoreSystem.swift */; };
 		B8EA085120489DF000FE8BBA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EA085020489DF000FE8BBA /* AppDelegate.swift */; };
 		B8EA085320489DF000FE8BBA /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = B8EA085220489DF000FE8BBA /* GameScene.sks */; };
 		B8EA085520489DF000FE8BBA /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = B8EA085420489DF000FE8BBA /* Actions.sks */; };
@@ -43,6 +45,8 @@
 		B81DC329204F8B1700EE11F7 /* BlockGameObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockGameObject.swift; sourceTree = "<group>"; };
 		B874421F205187F80012F246 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		B87442232051E62C0012F246 /* InGameButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InGameButton.swift; sourceTree = "<group>"; };
+		B8B6D5D32071848200EC4B8C /* LevelSpawner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelSpawner.swift; sourceTree = "<group>"; };
+		B8B6D5D52073E30000EC4B8C /* ScoreSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreSystem.swift; sourceTree = "<group>"; };
 		B8EA084D20489DF000FE8BBA /* Roll-A-Fall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Roll-A-Fall.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8EA085020489DF000FE8BBA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8EA085220489DF000FE8BBA /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -119,6 +123,8 @@
 				B81DC329204F8B1700EE11F7 /* BlockGameObject.swift */,
 				B874421F205187F80012F246 /* Player.swift */,
 				B87442232051E62C0012F246 /* InGameButton.swift */,
+				B8B6D5D32071848200EC4B8C /* LevelSpawner.swift */,
+				B8B6D5D52073E30000EC4B8C /* ScoreSystem.swift */,
 			);
 			path = "Roll-A-Fall";
 			sourceTree = "<group>";
@@ -260,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8EA085720489DF000FE8BBA /* GameScene.swift in Sources */,
+				B8B6D5D42071848200EC4B8C /* LevelSpawner.swift in Sources */,
 				B8EA085920489DF000FE8BBA /* GameViewController.swift in Sources */,
 				B87442242051E62C0012F246 /* InGameButton.swift in Sources */,
 				B81DC32A204F8B1700EE11F7 /* BlockGameObject.swift in Sources */,
@@ -267,6 +274,7 @@
 				B8744220205187F80012F246 /* Player.swift in Sources */,
 				B8FA35BC2048F72000902395 /* BaseGameObject.swift in Sources */,
 				B8FA35BE2048FA8F00902395 /* ParallaxingBackground.swift in Sources */,
+				B8B6D5D62073E30000EC4B8C /* ScoreSystem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
