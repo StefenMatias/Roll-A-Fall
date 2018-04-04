@@ -14,7 +14,6 @@ class ScoreSystem {
     var ScoreBenchmark : [Int]
     var NearestBlock: BlockGameObject?
     var NearestBlockMaxXPosition: Float
-    var ListPosition: Int?
     
     init(GameMode: String)
     {
@@ -53,6 +52,7 @@ class ScoreSystem {
                 if(firstRun)
                 {
                     NearestBlockMaxXPosition = Float(object.vert02.x)
+                    NearestBlock = object
                     firstRun = false
                 }
                 else
@@ -60,13 +60,39 @@ class ScoreSystem {
                     if (distance < NearestBlockMaxXPosition)
                     {
                         NearestBlockMaxXPosition = Float(object.vert02.x)
+                        NearestBlock = object
                     }
                 }
             }
         }
     }
     
-    func Updater(){
+    func Updater(Spawner: LevelSpawner, player: Player){
         
+        
+        if((NearestBlock?.vert02.x)! < player.position.x)
+        {
+            //Add Score and Grab Nearest Block
+            CurrentScore = (1 * ScoreMultiplyer)
+            var firstRun : Bool = true
+            for object in Spawner.SimpleGroundObjects
+            {
+                var distance: Float = Float(object.vert02.x - player.position.x)
+                if(firstRun)
+                {
+                    NearestBlockMaxXPosition = Float(object.vert02.x)
+                    NearestBlock = object
+                    firstRun = false
+                }
+                else
+                {
+                    if (distance < NearestBlockMaxXPosition)
+                    {
+                        NearestBlockMaxXPosition = Float(object.vert02.x)
+                        NearestBlock = object
+                    }
+                }
+            }
+        }
     }
 }

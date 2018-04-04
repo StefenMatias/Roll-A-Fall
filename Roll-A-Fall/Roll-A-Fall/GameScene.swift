@@ -12,7 +12,7 @@ class GameScene: SKScene {
     var recentTouchPostion = CGPoint()
     var screenTapped = false
     var gameSpeed: CGFloat = 10
-    var player : Player = Player(StartingPosition: CGPoint(x:1000, y:1000))
+    var player : Player = Player
     var backgroundImage01 : Gameobject = Gameobject(NameId: "Background", zPos: -1, transparency: 1)
     var backgroundImage02 : Gameobject = Gameobject(NameId: "Background", zPos: -1, transparency: 1)
     var parallaxer : ParallaxingBackground?
