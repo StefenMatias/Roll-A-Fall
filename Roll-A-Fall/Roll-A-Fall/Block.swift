@@ -15,7 +15,7 @@ protocol Block {
 }
 
 
-class BasicBlock: PhysicsObject, PhysicsStatic, Block {
+class BasicBlock: PhysicsObject, Block {
     
 
     

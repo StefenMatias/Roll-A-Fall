@@ -13,9 +13,10 @@
 		B822EE6B207537FC0017B192 /* Gameobject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B822EE6A207537FC0017B192 /* Gameobject.swift */; };
 		B822EE6D20754BA50017B192 /* PhysicsObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B822EE6C20754BA50017B192 /* PhysicsObject.swift */; };
 		B8744220205187F80012F246 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = B874421F205187F80012F246 /* Player.swift */; };
-		B87442242051E62C0012F246 /* InGameButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87442232051E62C0012F246 /* InGameButton.swift */; };
-		B8B6D5D42071848200EC4B8C /* LevelSpawner.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B6D5D32071848200EC4B8C /* LevelSpawner.swift */; };
+		B878A6AD2079705B005FEA52 /* Parallaxing.swift in Sources */ = {isa = PBXBuildFile; fileRef = B878A6AC2079705B005FEA52 /* Parallaxing.swift */; };
+		B878A6AF207A66DD005FEA52 /* SpeedUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B878A6AE207A66DD005FEA52 /* SpeedUp.swift */; };
 		B8B6D5D62073E30000EC4B8C /* ScoreSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B6D5D52073E30000EC4B8C /* ScoreSystem.swift */; };
+		B8D9AC1D2076FD2600DF04BF /* ObjectClickable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D9AC1C2076FD2600DF04BF /* ObjectClickable.swift */; };
 		B8EA085120489DF000FE8BBA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8EA085020489DF000FE8BBA /* AppDelegate.swift */; };
 		B8EA085320489DF000FE8BBA /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = B8EA085220489DF000FE8BBA /* GameScene.sks */; };
 		B8EA085520489DF000FE8BBA /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = B8EA085420489DF000FE8BBA /* Actions.sks */; };
@@ -24,7 +25,6 @@
 		B8EA085C20489DF000FE8BBA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8EA085A20489DF000FE8BBA /* Main.storyboard */; };
 		B8EA085E20489DF000FE8BBA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8EA085D20489DF000FE8BBA /* Assets.xcassets */; };
 		B8EA086120489DF000FE8BBA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8EA085F20489DF000FE8BBA /* LaunchScreen.storyboard */; };
-		B8FA35BE2048FA8F00902395 /* ParallaxingBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FA35BD2048FA8F00902395 /* ParallaxingBackground.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,9 +51,10 @@
 		B822EE6A207537FC0017B192 /* Gameobject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gameobject.swift; sourceTree = "<group>"; };
 		B822EE6C20754BA50017B192 /* PhysicsObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsObject.swift; sourceTree = "<group>"; };
 		B874421F205187F80012F246 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
-		B87442232051E62C0012F246 /* InGameButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InGameButton.swift; sourceTree = "<group>"; };
-		B8B6D5D32071848200EC4B8C /* LevelSpawner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelSpawner.swift; sourceTree = "<group>"; };
+		B878A6AC2079705B005FEA52 /* Parallaxing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parallaxing.swift; sourceTree = "<group>"; };
+		B878A6AE207A66DD005FEA52 /* SpeedUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeedUp.swift; sourceTree = "<group>"; };
 		B8B6D5D52073E30000EC4B8C /* ScoreSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreSystem.swift; sourceTree = "<group>"; };
+		B8D9AC1C2076FD2600DF04BF /* ObjectClickable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectClickable.swift; sourceTree = "<group>"; };
 		B8EA084D20489DF000FE8BBA /* Roll-A-Fall.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Roll-A-Fall.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8EA085020489DF000FE8BBA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8EA085220489DF000FE8BBA /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -66,7 +67,6 @@
 		B8EA086220489DF000FE8BBA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B8EA086720489DF000FE8BBA /* Roll-A-FallTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Roll-A-FallTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8EA087220489DF000FE8BBA /* Roll-A-FallUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Roll-A-FallUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B8FA35BD2048FA8F00902395 /* ParallaxingBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParallaxingBackground.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,16 +124,16 @@
 				B8EA085D20489DF000FE8BBA /* Assets.xcassets */,
 				B8EA085F20489DF000FE8BBA /* LaunchScreen.storyboard */,
 				B8EA086220489DF000FE8BBA /* Info.plist */,
-				B8FA35BD2048FA8F00902395 /* ParallaxingBackground.swift */,
 				B874421F205187F80012F246 /* Player.swift */,
-				B87442232051E62C0012F246 /* InGameButton.swift */,
-				B8B6D5D32071848200EC4B8C /* LevelSpawner.swift */,
 				B8B6D5D52073E30000EC4B8C /* ScoreSystem.swift */,
 				B822EE64207537B60017B192 /* BlockSpawner.swift */,
 				B822EE66207537C30017B192 /* BlockFactory.swift */,
 				B822EE68207537E40017B192 /* Block.swift */,
 				B822EE6A207537FC0017B192 /* Gameobject.swift */,
 				B822EE6C20754BA50017B192 /* PhysicsObject.swift */,
+				B8D9AC1C2076FD2600DF04BF /* ObjectClickable.swift */,
+				B878A6AC2079705B005FEA52 /* Parallaxing.swift */,
+				B878A6AE207A66DD005FEA52 /* SpeedUp.swift */,
 			);
 			path = "Roll-A-Fall";
 			sourceTree = "<group>";
@@ -275,17 +275,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8EA085720489DF000FE8BBA /* GameScene.swift in Sources */,
-				B8B6D5D42071848200EC4B8C /* LevelSpawner.swift in Sources */,
 				B822EE69207537E40017B192 /* Block.swift in Sources */,
 				B8EA085920489DF000FE8BBA /* GameViewController.swift in Sources */,
-				B87442242051E62C0012F246 /* InGameButton.swift in Sources */,
+				B878A6AD2079705B005FEA52 /* Parallaxing.swift in Sources */,
 				B822EE6B207537FC0017B192 /* Gameobject.swift in Sources */,
+				B878A6AF207A66DD005FEA52 /* SpeedUp.swift in Sources */,
 				B822EE65207537B60017B192 /* BlockSpawner.swift in Sources */,
 				B8EA085120489DF000FE8BBA /* AppDelegate.swift in Sources */,
 				B822EE6D20754BA50017B192 /* PhysicsObject.swift in Sources */,
 				B8744220205187F80012F246 /* Player.swift in Sources */,
 				B822EE67207537C30017B192 /* BlockFactory.swift in Sources */,
-				B8FA35BE2048FA8F00902395 /* ParallaxingBackground.swift in Sources */,
+				B8D9AC1D2076FD2600DF04BF /* ObjectClickable.swift in Sources */,
 				B8B6D5D62073E30000EC4B8C /* ScoreSystem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -31,33 +31,59 @@ protocol PhysicsNonStatic {
 
 class PhysicsObject: Gameobject {
     //All objects that can collide with other objects and also can possibly be affected by other forces for instance gravity
-    var vert01 : CGPoint = CGPoint()
-    var vert02 : CGPoint = CGPoint()
-    var vert03 : CGPoint = CGPoint()
-    var vert04 : CGPoint = CGPoint()
+    var boxCollider: BoxCollider?
     
     
+
     // Asset Name, Z-Position, Alpha
     init(nameid: String,zpos: CGFloat, ipos: CGPoint ){
-    
-        
-        
         
         //References the super class (Gameobject) and initilizes it  within this class
         super.init(NameId: nameid, zPos: zpos, transparency: 1, initialPosition: ipos)
-        self.vert01 = CGPoint(x: position.x - (size.width/2), y: position.y - (size.height/2))
-        self.vert02 = CGPoint(x: position.x + (size.width/2), y: position.y - (size.height/2))
-        self.vert03 = CGPoint(x: position.x + (size.width/2), y: position.y + (size.height/2))
-        self.vert04 = CGPoint(x: position.x - (size.width/2), y: position.y + (size.height/2))
-        
+        self.boxCollider = BoxCollider(v1: CGPoint(x: position.x - (size.width/2), y: position.y - (size.height/2)), v2: CGPoint(x: position.x + (size.width/2), y: position.y - (size.height/2)), v3: CGPoint(x: position.x + (size.width/2), y: position.y + (size.height/2)), v4: CGPoint(x: position.x - (size.width/2), y: position.y + (size.height/2)))
+
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+}
+
+
+class BoxCollider {
+    var vert01 : CGPoint
+    var vert02 : CGPoint
+    var vert03 : CGPoint
+    var vert04 : CGPoint
     
+    init(v1: CGPoint,v2: CGPoint, v3: CGPoint, v4: CGPoint ){
+        self.vert01 = v1
+        self.vert02 = v2
+        self.vert03 = v3
+        self.vert04 = v4
+    }
+    init (gameobj: Gameobject )
+    {
+        self.vert01 = CGPoint(x: gameobj.position.x - (gameobj.size.width/2), y: gameobj.position.y - (gameobj.size.height/2))
+        self.vert02 = CGPoint(x: gameobj.position.x + (gameobj.size.width/2), y: gameobj.position.y - (gameobj.size.height/2))
+        self.vert03 = CGPoint(x: gameobj.position.x + (gameobj.size.width/2), y: gameobj.position.y + (gameobj.size.height/2))
+        self.vert04 = CGPoint(x: gameobj.position.x - (gameobj.size.width/2), y: gameobj.position.y + (gameobj.size.height/2))
+    }
     
-    //Function That Can Be Called When youre checking to see if an object is colliding with this object and you want the object to operate with a box collider and collide with a box collider. The object you input is the one with the box collider
+    func updateCollider(gameobj: Gameobject) {
+        self.vert01 = CGPoint(x: gameobj.position.x - (gameobj.size.width/2), y: gameobj.position.y - (gameobj.size.height/2))
+        self.vert02 = CGPoint(x: gameobj.position.x + (gameobj.size.width/2), y: gameobj.position.y - (gameobj.size.height/2))
+        self.vert03 = CGPoint(x: gameobj.position.x + (gameobj.size.width/2), y: gameobj.position.y + (gameobj.size.height/2))
+        self.vert04 = CGPoint(x: gameobj.position.x - (gameobj.size.width/2), y: gameobj.position.y + (gameobj.size.height/2))
+    }
+    
+    func updateCollider(gameobj: PhysicsObject) {
+        self.vert01 = CGPoint(x: gameobj.position.x - (gameobj.size.width/2), y: gameobj.position.y - (gameobj.size.height/2))
+        self.vert02 = CGPoint(x: gameobj.position.x + (gameobj.size.width/2), y: gameobj.position.y - (gameobj.size.height/2))
+        self.vert03 = CGPoint(x: gameobj.position.x + (gameobj.size.width/2), y: gameobj.position.y + (gameobj.size.height/2))
+        self.vert04 = CGPoint(x: gameobj.position.x - (gameobj.size.width/2), y: gameobj.position.y + (gameobj.size.height/2))
+    }
+    
     func isCollidingBox(positions: [CGPoint]) -> Bool {
         for position in positions {
             if(position.x > vert01.x && position.x < vert02.x && position.y > vert01.y && position.y < vert03.y ){
@@ -66,19 +92,4 @@ class PhysicsObject: Gameobject {
         }
         return false
     }
-    //USE IF POSITION HAS CHANGED SINCE INIT
-    func updateCollider() {
-        self.vert01 = CGPoint(x: position.x - (size.width/2), y: position.y - (size.height/2))
-        self.vert02 = CGPoint(x: position.x + (size.width/2), y: position.y - (size.height/2))
-        self.vert03 = CGPoint(x: position.x + (size.width/2), y: position.y + (size.height/2))
-        self.vert04 = CGPoint(x: position.x - (size.width/2), y: position.y + (size.height/2))
-    }
-    
-    //Function That Can Be Called When youre checking to see if an object is colliding with this object and you want the object to operate with a circle collider and collide with a box collider. The object you input is the one with the box collider
-    /*func isCollidingCircle(positions: [CGPoint]) -> Bool {
-     if( ) {
-     
-     }
-     }*/
-
 }

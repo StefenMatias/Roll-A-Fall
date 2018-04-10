@@ -12,7 +12,7 @@ class ScoreSystem {
     var CurrentScore : Int
     var ScoreMultiplyer: Int
     var ScoreBenchmark : [Int]
-    var NearestBlock: BlockGameObject?
+    var NearestBlock: Block?
     var NearestBlockMaxXPosition: Float
     
     init(GameMode: String)
@@ -41,7 +41,7 @@ class ScoreSystem {
     }
     //Call Before Update
     //Setup
-    func SystemStart(Spawner: LevelSpawner, player: Player){
+/*    func SystemStart(Spawner: LevelSpawner, player: Player){
         //Go Through Level Spawner Blocks and find the one closest to the starting position of the ball, set it's max X position to Nearest Block Max X Position
         var firstRun: Bool = true
         for object in Spawner.SimpleGroundObjects
@@ -66,8 +66,8 @@ class ScoreSystem {
             }
         }
     }
-    
-    func Updater(Spawner: LevelSpawner, player: Player){
+    */
+   /* func Updater(Spawner: LevelSpawner, player: Player){
         
         
         if((NearestBlock?.vert02.x)! < player.position.x)
@@ -94,5 +94,5 @@ class ScoreSystem {
                 }
             }
         }
-    }
+    }*/
 }
