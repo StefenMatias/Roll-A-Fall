@@ -92,4 +92,11 @@ class BoxCollider {
         }
         return false
     }
+    
+    func isCollidingBox(position: CGPoint) -> Bool {
+        if(position.x > vert01.x && position.x < vert02.x && position.y > vert01.y && position.y < vert03.y ){
+                return true
+            }
+        return false
+    }
 }
