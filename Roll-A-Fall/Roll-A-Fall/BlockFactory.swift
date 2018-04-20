@@ -25,6 +25,9 @@ class BlockFactory {
         case "basicMovingVertical":
             return VerticalMovingBasicBlock(pos: position, parallaxSpeed: currentSpeed)
             
+        case "basicVertical":
+            return VerticalBasicBlock(pos: CGPoint(x: position.x,y: position.y + 200), parallaxSpeed: currentSpeed)
+            
         default:
             print("type does not conform to list of types")
             return BasicBlock(pos: position, parallaxSpeed: currentSpeed)

@@ -51,22 +51,69 @@ class BasicBlock: PhysicsObject, Block, Parallaxing{
     func reduceSpeed(subtractiveSpeed: CGFloat) {
         parallaxingSpeed -= subtractiveSpeed
     }
-    
-    
-
-    
     func updater() {
         //No Code Needed
     }
 }
 
 class EmptyBlock: Block {
+    func updater() {
+        //No Update Required
+    }
+    
+    //Used As A "Space" within the game (Required Jump Obstacle)
+}
+    
 
+    
+
+
+class VerticalBasicBlock: PhysicsObject, Block, Parallaxing{
+    var parallaxingSpeed: CGFloat
+
+    
+    
+    init(pos: CGPoint, parallaxSpeed: CGFloat ){
+        self.parallaxingSpeed = parallaxSpeed
+        
+        //References the super class (PhysicsObject) and initilizes it  within this class
+        super.init(nameid: "Block01" , zpos: 2, ipos:pos)
+        self.boxCollider = BoxCollider(v1: CGPoint(x: position.x - (size.width/2), y: position.y - (size.height/2)), v2: CGPoint(x: position.x + (size.width/2), y: position.y - (size.height/2)), v3: CGPoint(x: position.x + (size.width/2), y: position.y + (size.height/2)), v4: CGPoint(x: position.x - (size.width/2), y: position.y + (size.height/2)))
+        
+    }
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func isParallaxing(maxScreenWidth: Int) {
+        self.position.x -= parallaxingSpeed
+        
+        if(self.position.x <= ((-1) * self.size.width/2))
+        {
+            self.position.x = (CGFloat(maxScreenWidth) + self.size.width/2)
+        }
+    }
+    
+    func changeSpeed(newSpeed: CGFloat) {
+        self.parallaxingSpeed = newSpeed
+    }
+    
+    func addSpeed(addativeSpeed: CGFloat) {
+        parallaxingSpeed += addativeSpeed
+    }
+    
+    func reduceSpeed(subtractiveSpeed: CGFloat) {
+        parallaxingSpeed -= subtractiveSpeed
+    }
+    
+    
+    
     
     func updater() {
         //No Code Needed
     }
 }
+
 
 class VerticalMovingBasicBlock: PhysicsObject, Block, Parallaxing{
     var parallaxingSpeed: CGFloat
@@ -138,5 +185,50 @@ class VerticalMovingBasicBlock: PhysicsObject, Block, Parallaxing{
         {
             self.position.y -= 10
         }
+    }
+}
+
+class BreakableBasicBlock: PhysicsObject, Block, Parallaxing {
+    
+    var parallaxingSpeed: CGFloat
+    var playerContacted: Bool
+
+    
+    
+    init(pos: CGPoint, parallaxSpeed: CGFloat ){
+        self.parallaxingSpeed = parallaxSpeed
+        self.playerContacted = false
+        
+        //References the super class (PhysicsObject) and initilizes it  within this class
+        super.init(nameid: "Block01" , zpos: 2, ipos: pos)
+        self.boxCollider = BoxCollider(v1: CGPoint(x: position.x - (size.width/2), y: position.y - (size.height/2)), v2: CGPoint(x: position.x + (size.width/2), y: position.y - (size.height/2)), v3: CGPoint(x: position.x + (size.width/2), y: position.y + (size.height/2)), v4: CGPoint(x: position.x - (size.width/2), y: position.y + (size.height/2)))
+        
+    }
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func updater() {
+        if (playerContacted)
+        {
+            self.position.y -= 20
+        }
+    }
+    
+    
+    func isParallaxing(maxScreenWidth: Int) {
+        
+    }
+    
+    func changeSpeed(newSpeed: CGFloat) {
+        
+    }
+    
+    func addSpeed(addativeSpeed: CGFloat) {
+        
+    }
+    
+    func reduceSpeed(subtractiveSpeed: CGFloat) {
+        
     }
 }

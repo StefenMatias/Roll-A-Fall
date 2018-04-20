@@ -10,14 +10,18 @@ import Foundation
 import SpriteKit
 
 class BlockSpawner {
-    var allBlocks = [Block]()
+    public var allBlocks = [Block]()
     var bFactory = BlockFactory()
     var standardY : CGFloat
     var currentSpeed: CGFloat
+    var score: Int
+    var averageBlockWidth: CGFloat
     
-    init(stanY: CGFloat, cSpeed: CGFloat) {
+    init(stanY: CGFloat, cSpeed: CGFloat, scoreSystm: ScoreSystem, blockWidth: CGFloat) {
         self.standardY = stanY
         self.currentSpeed = cSpeed
+        self.score = currentScore
+        self.averageBlockWidth = blockWidth
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -25,24 +29,26 @@ class BlockSpawner {
     }
     
     func Start(){
-        //Create 10 Blocks and position them accordingly.
+        //Create 10 Basic Blocks and position them accordingly, and adds them to allBlocks
+        //This Runs upon start in order to create a flat level to start the game upon
         var count : CGFloat = 0
-        var randomnum : CGFloat = 0
-        while count != 5 {
-            //Randomly Choose A Block To Create between 1 and 6
-            randomnum = CGFloat(Int(arc4random_uniform(6)) + 1)
-            switch randomnum {
-            case 1:
-                allBlocks.append(BasicBlock(pos: CGPoint(x: 0 + (count * 200) ,y: standardY), parallaxSpeed: currentSpeed))
-                break
-            default:
-                print("Random Num Not Within Options")
-            }
-
-            
-            
+        while count != 12 {
+            var temp : Block
+            temp = bFactory.make(type: "basic", position: CGPoint(x: CGFloat(count * averageBlockWidth) , y: standardY), currentSpeed: currentSpeed)
+            allBlocks.append(temp)
             count += 1
         }
+        
+    }
+    
+    func Update(){
+        // Will Check to see if any blocks are about to be parallaxed, if so this function will update the block with a new block!
+        
+    }
+    
+    func createRdmString() -> String {
+        var maxRndm: Int
+        
         
     }
 }
